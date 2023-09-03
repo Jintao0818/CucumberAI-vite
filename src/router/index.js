@@ -14,21 +14,19 @@ const router = createRouter({
       children: [
         {
           path: '/mobile/home',
-          component: () => import('@/views/mobile/components/MobileHome.vue')
+          component: () => import('@/views/mobile/pages/MobileHome.vue')
         },
         {
           path: '/mobile/settings',
-          component: () =>
-            import('@/views/mobile/components/MobileSettings.vue')
+          component: () => import('@/views/mobile/pages/MobileSettings.vue')
         },
         {
           path: '/mobile/instruction',
-          component: () =>
-            import('@/views/mobile/components/MobileInstruction.vue')
+          component: () => import('@/views/mobile/pages/MobileInstruction.vue')
         },
         {
           path: '/mobile/result',
-          component: () => import('@/views/mobile/components/MobileResult.vue')
+          component: () => import('@/views/mobile/pages/MobileResult.vue')
         }
       ]
     },
