@@ -1,4 +1,4 @@
-# vue3-demo
+# CucumberAI v2.0 (based on vite)
 
 This template should help get you started developing with Vue 3 in Vite.
 
