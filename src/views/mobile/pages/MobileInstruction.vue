@@ -22,19 +22,19 @@ onMounted(() => {
     />
     <var-cell style="color: #888888" border>Steps</var-cell>
     <var-steps direction="vertical" :active="activeStep" class="step-bar">
-      <var-step
-        >Select a mode and one character at least on 'Settings' page.</var-step
-      >
-      <var-step
-        >Press the button on 'Home' page to take a photo and edit it, when
+      <var-step>
+        Select a mode and one character at least on 'Settings' page.
+      </var-step>
+      <var-step>
+        Press the button on 'Home' page to take a photo and edit it, when
         finished it will be automatically uploaded and analyzed.Please wait
-        patiently.</var-step
-      >
+        patiently.
+      </var-step>
       <var-step>Resulting images and tables will be displayed.</var-step>
     </var-steps>
     <var-button class="common" type="primary" block @click="next"
-      >Next</var-button
-    >
+      >Next
+    </var-button>
   </var-space>
 </template>
 

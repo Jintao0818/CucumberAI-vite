@@ -22,7 +22,7 @@ const state = reactive({
 })
 const fileName = ref('')
 
-// 检查是否
+// 检查是否设置完成
 const checkSetting = () => {
   Snackbar.warning('Select mode and characteristic at first!')
   router.push('/mobile/settings')
@@ -93,8 +93,8 @@ const handleModalSure = async () => {
         .then((res) => {
           Snackbar.success('Analyze success!')
           console.log(res)
+          // 结果数据更新
           resultData.value = res.data
-          // Excel下载链接更新
           downloadUrl.value =
             'data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,' +
             res.data.excel
@@ -129,7 +129,6 @@ const handleModalCancel = () => {
 </script>
 
 <template>
-  <!-- <var-snackbar show="true">这是一个消息条！！</var-snackbar> -->
   <!-- 主页 -->
   <var-image class="logo" src="/img/mobile/LOGO.png" width="35vw" />
   <var-image
@@ -181,42 +180,42 @@ const handleModalCancel = () => {
     />
 
     <var-row>
-      <var-col :span="5" :offset="2"
-        ><var-button
+      <var-col :span="5" :offset="2">
+        <var-button
           class="corpper-btn"
           type="primary"
           size="small"
           @click="rorateImg(-1)"
-          >Left</var-button
-        ></var-col
-      >
-      <var-col :span="5"
-        ><var-button
+          >Left
+        </var-button>
+      </var-col>
+      <var-col :span="5">
+        <var-button
           class="corpper-btn"
           type="primary"
           size="small"
           @click="rorateImg(1)"
-          >Right</var-button
-        ></var-col
-      >
-      <var-col :span="5"
-        ><var-button
+          >Right
+        </var-button>
+      </var-col>
+      <var-col :span="5">
+        <var-button
           class="corpper-btn"
           type="primary"
           size="small"
           @click="handleModalSure"
-          >Sure</var-button
-        ></var-col
-      >
-      <var-col :span="5"
-        ><var-button
+          >Sure
+        </var-button>
+      </var-col>
+      <var-col :span="5">
+        <var-button
           class="corpper-btn"
           type="primary"
           size="small"
           @click="handleModalCancel"
-          >Cancel</var-button
-        ></var-col
-      >
+          >Cancel
+        </var-button>
+      </var-col>
     </var-row>
   </var-popup>
 </template>

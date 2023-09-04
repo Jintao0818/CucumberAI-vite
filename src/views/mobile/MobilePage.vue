@@ -64,12 +64,6 @@ onMounted(() => {
 </template>
 
 <style lang="scss" scoped>
-// #app {
-//   background: red;
-//   min-height: 100vh;
-//   max-height: max-content;
-// }
-
 .bottom {
   background: #f5f5f5;
   height: 25vw;

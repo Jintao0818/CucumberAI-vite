@@ -16,6 +16,7 @@ const downloadFile = () => {
 </script>
 
 <template>
+  <!-- 结果展示 -->
   <var-space direction="column" :size="[14, 0]">
     <var-cell style="color: #888888" border>Result images</var-cell>
     <var-swipe class="swipe-container" :class="`var-elevation--3`">
@@ -123,7 +124,6 @@ const downloadFile = () => {
 
 .swipe-image {
   width: 60%;
-  // height: 100%;
   object-fit: cover;
   pointer-events: none;
 }

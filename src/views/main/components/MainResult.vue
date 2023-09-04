@@ -129,7 +129,7 @@ const columns2 = [
   }
 ]
 
-//图片下载
+// 图片下载
 const downloadimgs = (record) => {
   const imgKey = record.key
   for (const [key, value] of Object.entries(record)) {
@@ -143,6 +143,7 @@ const downloadimgs = (record) => {
   }
 }
 
+// 表格下载
 const downloadExcel = () => {
   const element = document.createElement('a')
   element.href = downloadUrl.value
@@ -160,7 +161,6 @@ watch([() => resultData.value], (newData) => {
       }
     }
   }
-  //   data.value = res.data.imgdata
 })
 
 const visiable = ref(false)
@@ -189,15 +189,6 @@ defineExpose({
   <div v-if="visiable">
     <!-- Excel文件下载 -->
     <a-divider orientation="left">Result Data</a-divider>
-    <!-- <a-space
-    ><PaperClipOutlined /><a
-      id="downloadexcel"
-      :href="downloadUrl"
-      :download="modeValue + '.xlsx'"
-    >
-      {{ modeValue }}.xlsx</a
-    ></a-space
-  > -->
     <a-button @click="downloadExcel" type="primary"
       ><VerticalAlignBottomOutlined />Click to Download</a-button
     >

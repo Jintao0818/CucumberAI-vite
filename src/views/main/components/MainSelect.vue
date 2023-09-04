@@ -17,34 +17,6 @@ const onCheckAllChange = (e) => {
     characterValue.value = e.target.checked ? plainOptions2 : []
   }
   indeterminate.value = false
-  // if (state.checkedList.length == 0 || fileList.value.length == 0) {
-  //   prebtn.value = false
-  // } else {
-  //   if (
-  //     fileList.value.length == 1 &&
-  //     (uploadError.value == true || resetbtn.value == false)
-  //   ) {
-  //     prebtn.value = false
-  //   } else {
-  //     prebtn.value = true
-  //   }
-  // }
-}
-
-//选择框变化
-const onRatioGruopChange = (e) => {
-  // if (state.checkedList.length == 0 || fileList.value.length == 0) {
-  //   prebtn.value = false
-  // } else {
-  //   if (
-  //     fileList.value.length == 1 &&
-  //     (uploadError.value == true || resetbtn.value == false)
-  //   ) {
-  //     prebtn.value = false
-  //   } else {
-  //     prebtn.value = true
-  //   }
-  // }
 }
 
 //模式选择变化

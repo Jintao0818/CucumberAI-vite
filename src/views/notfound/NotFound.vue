@@ -18,6 +18,7 @@ const router = useRouter()
 
 <style scoped>
 .result {
+  --result-background: #f5f5f5;
   width: 100vw !important;
   height: 90vh;
   display: flex;
