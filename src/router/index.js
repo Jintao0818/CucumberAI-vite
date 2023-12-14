@@ -5,7 +5,7 @@ const router = createRouter({
   routes: [
     {
       path: '/main',
-      component: () => import('@/views/main/MainPage.vue')
+      component: () => import('@/views/main/MainPage.vue') //路由懒加载
     },
     {
       path: '/',

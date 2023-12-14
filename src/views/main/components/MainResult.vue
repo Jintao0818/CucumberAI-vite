@@ -27,6 +27,13 @@ const columns1 = [
     dataIndex: 'name'
   },
   {
+    title: 'Fruit',
+    dataIndex: 'fruit_img',
+    slots: {
+      customRender: 'fruit_img'
+    }
+  },
+  {
     title: 'Segment',
     dataIndex: 'color_img',
     slots: {
@@ -200,7 +207,16 @@ defineExpose({
       :columns="columns"
       :data-source="resultData.imgdata"
       :pagination="{ pageSize: 5 }"
+      :scroll="{ x: 1000 }"
     >
+      <template #fruit_img="{ record }">
+        <span>
+          <a-image
+            width="50px"
+            :src="'data:image/jpg;base64,' + record.fruit_img"
+          />
+        </span>
+      </template>
       <template #color_img="{ record }">
         <span>
           <a-image
