@@ -2,6 +2,7 @@
 import MainInstruction from './components/MainInstruction.vue'
 import MainSelect from './components/MainSelect.vue'
 import MainResult from './components/MainResult.vue'
+import MainSamples from './components/MainSamples.vue'
 import { message, Modal, notification } from 'ant-design-vue'
 import 'ant-design-vue/dist/antd.css'
 import {
@@ -17,9 +18,14 @@ import { ExclamationCircleOutlined } from '@ant-design/icons-vue'
 const GPUstatus = ref(false)
 const dotCount = ref(1)
 const instruction = ref()
+const samples = ref()
 const openInstruction = () => {
   dotCount.value = 0
   instruction.value.openInstruction()
+}
+
+const openSamples = () => {
+  samples.value.openSamples()
 }
 
 const fileList = ref([]) //上传的图片
@@ -207,6 +213,11 @@ watch(
             <a @click="openInstruction">Instructions for use</a>
           </a-badge>
           <main-instruction ref="instruction"></main-instruction>
+          <a-divider type="vertical" />
+          <a-badge count="1" dot>
+            <a @click="openSamples">Sample Images</a>
+          </a-badge>
+          <main-samples ref="samples"></main-samples>
         </template>
         <a-typography class="tg">
           <a-typography-title :level="4">
@@ -268,7 +279,7 @@ watch(
       </a-card>
     </a-layout-content>
     <a-layout-footer style="text-align: center; background: #f5f5f5">
-      CucumberAI ©2023 Created by Jin Tao
+      CucumberAI ©2023 Created by NJAU
     </a-layout-footer>
   </a-layout>
 </template>
