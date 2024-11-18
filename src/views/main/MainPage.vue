@@ -25,8 +25,11 @@ const openInstruction = () => {
 }
 
 const openSamples = () => {
-  samples.value.openSamples()
+  // samples.value.openSamples()
+  showSamples.value = true
 }
+
+const showSamples = ref(false)
 
 const fileList = ref([]) //上传的图片
 const fileNameList = ref([])
@@ -212,12 +215,18 @@ watch(
           <a-badge :count="dotCount" dot>
             <a @click="openInstruction">Instructions for use</a>
           </a-badge>
+          <!-- 使用说明框 -->
           <main-instruction ref="instruction"></main-instruction>
           <a-divider type="vertical" />
           <a-badge count="1" dot>
             <a @click="openSamples">Sample Images</a>
           </a-badge>
-          <main-samples ref="samples"></main-samples>
+          <!-- 样本图片展示框 -->
+          <main-samples
+            ref="samples"
+            v-model="showSamples"
+            @click="openSamples"
+          ></main-samples>
         </template>
         <a-typography class="tg">
           <a-typography-title :level="4">
@@ -279,7 +288,7 @@ watch(
       </a-card>
     </a-layout-content>
     <a-layout-footer style="text-align: center; background: #f5f5f5">
-      CucumberAI ©2023 Created by NJAU
+      CucumberAI ©2023 Created by JinTao
     </a-layout-footer>
   </a-layout>
 </template>

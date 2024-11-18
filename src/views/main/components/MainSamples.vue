@@ -1,23 +1,26 @@
 <script setup>
-const visible = ref(false)
 const current = ref(0)
+// const visible = ref(false)
 
-const openSamples = () => {
-  visible.value = true
-}
+// Vue3.5 组件v-model（父组件v-model，子组件defineModel接收实现双向绑定）
+const showSamples = defineModel()
+
+// const openSamples = () => {
+//   visible.value = true
+// }
 
 const handleOk = (e) => {
   visible.value = false
 }
 
-defineExpose({
-  openSamples
-})
+// defineExpose({
+//   openSamples
+// })
 </script>
 
 <template>
   <a-modal
-    v-model:visible="visible"
+    v-model:visible="showSamples"
     title="Click to download sample images"
     @ok="handleOk"
     class="modal"
